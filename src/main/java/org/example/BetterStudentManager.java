@@ -22,7 +22,7 @@ public class BetterStudentManager {
         // This method should remove the student with the given name from the list of students
         int index = 0;
         for(int i = 0; i < students.size(); i++){
-            if(students.get(i).name==name){
+            if(students.get(i).name.equals(name)){
                 index=i;
                 break;
             }
@@ -41,10 +41,10 @@ public class BetterStudentManager {
         // looping through the list of students
         //
         // Replace the following line with your implementation
-        String studentGrades = "";
+        StringBuilder studentGrades = new StringBuilder();
         for(Student student: students){
-            studentGrades += (student.name + " " + student.grade + "\n");
+            studentGrades.append(student.name).append(" ").append(student.grade).append("\n");
         }
-        return studentGrades;
+        return studentGrades.toString();
     }
 }
